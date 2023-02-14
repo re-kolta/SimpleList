@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+  <title>主页</title>
+  <style>
+    a{text-decoration: none;}
+  </style>
+</head>
+<body>
+    <p>please choose operation:</p>
+    <ul>
+        <li>
+            <a id="parse" onclick="showInput(0)" href="#" title="just use the parsing function">parse share links</a>
+        </li>
+        <br>
+        <li>
+            <a href="https://www.baidu.com" title="grant to access your own netdisk">show files</a> 
+            <!--return qrcode-->
+        </li>
+        <br>
+        <li>
+            <a onclick="function notice(){ alert('under constructing')}" >ADMIN</a>
+        </li>
+    </ul>
+    <div id="userInput">
+
+    </div>
+</body>
+<script>
+    function showInput(code){ <!--0:parse 1:get files 2:admin action-->
+        switch(code){
+            case 0:{
+                //create two input elements
+                let shareLinkInput = document.createElement('input');
+                shareLinkInput.id = "sharelink";
+                shareLinkInput.placeholder = "input the share link";
+                let passCodeInput = document.createElement('input');
+                passCodeInput.id = "passcode";
+                passCodeInput.placeholder = "input the extraction code";
+                document.getElementById("userInput").appendChild(shareLinkInput);
+                document.getElementById("userInput").appendChild(passCodeInput);
+                document.getElementById("parse").onclick=null;
+            }
+        }
+    }
+    function getDirByShareLink(){
+
+    }
+</script>
